@@ -7,7 +7,7 @@ conferencias <- read.csv("conferencias.csv")
 supervisao <- read.csv("supervisao.csv")
 
 
-#variaveis realionadas as informações do pq
+#variaveis realionadas as informaÃ§Ãµes do pq
 
 pq <- subset(pesquisador, select = c("name","phd.institution","phd.start.year",
                                      "phd.end.year","country.origin","major.field",
@@ -92,18 +92,18 @@ tabela_merge <- merge(pq, q, by="Nome", all.x=TRUE)
 liv <- subset(livros, select = c("id.file", "name", "book.type", "book.year"))
 
 liv$capitulo <-
-  ifelse((liv$book.type == "Capítulo de livro publicado"),1,0)
+  ifelse((liv$book.type == "CapÃ­tulo de livro publicado"),1,0)
 
 liv$publicado <-
   ifelse((liv$book.type == "LIVRO_PUBLICADO"),1,liv$book.type)
 
 liv$publicado <-
-  ifelse((liv$book.type == "Capítulo de livro publicado"),1,liv$publicado)
+  ifelse((liv$book.type == "CapÃ­tulo de livro publicado"),1,liv$publicado)
 
 liv$publicado[liv$publicado > 1] <- 1
 
 liv$publicado <-
-  ifelse((liv$book.type == "Capítulo de livro publicado"),0,1)
+  ifelse((liv$book.type == "CapÃ­tulo de livro publicado"),0,1)
 
 w <- liv%>%
   select(name,book.year,capitulo,publicado)%>%
@@ -112,7 +112,7 @@ w <- liv%>%
 w <- w%>%
   select(name, capitulo, publicado)%>%
   summarise(Nlivros = sum(publicado),
-            NCapítulosLivros = sum(capitulo))
+            NCapÃ­tulosLivros = sum(capitulo))
 
 colnames(w)[1] <- "Nome"
 
