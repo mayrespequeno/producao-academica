@@ -33,7 +33,7 @@ graf.distribuicao.bolsas.sexo <-
     scale_fill_manual(values = c("khaki1","khaki4"))
 
 grafico1 <- grid.arrange(graf.distribuicao.bolsas.sexo,ncol=1,
-             top = textGrob("Gráfico 1 - Distribuição dos bolsistas PQ por sexo",
+             top = textGrob("GrÃ¡fico 1 - DistribuiÃ§Ã£o dos bolsistas PQ por sexo",
                             gp=gpar(fontsize=12,font=1)),
              bottom = textGrob("Dados Obtidos a partir da pesquisa (2020)",
                                gp=gpar(fontsize=10,font=1)))
@@ -82,10 +82,10 @@ graf.distribuicao.tipo.bolsa <-
         axis.text.x = element_text(size = 10, colour = "black"),
       axis.text.y = element_text(size = 10, colour = "black"),
       axis.title.y = element_text(size=11, face="bold", colour = "black"))+
-  labs(x = "", y = "Frequência")
+  labs(x = "", y = "FrequÃªncia")
 
 grafico2 <- grid.arrange(graf.distribuicao.tipo.bolsa,ncol=1,
-             top = textGrob("Gráfico 2 - Distribuição por tipos de bolsa PQ",
+             top = textGrob("GrÃ¡fico 2 - DistribuiÃ§Ã£o por tipos de bolsa PQ",
                             gp=gpar(fontsize=12,font=1)),
              bottom = textGrob("Dados Obtidos a partir da pesquisa (2020)",
                                gp=gpar(fontsize=10,font=1)))
@@ -93,7 +93,7 @@ grafico2 <- grid.arrange(graf.distribuicao.tipo.bolsa,ncol=1,
 
 #recodificando a variavel regiao
 PQS_BRASIL$REG1 <-
-  ifelse((PQS_BRASIL$Região == "1"),"Centro-Oeste",PQS_BRASIL$Região)
+  ifelse((PQS_BRASIL$RegiÃ£o == "1"),"Centro-Oeste",PQS_BRASIL$RegiÃ£o)
 PQS_BRASIL$REG2 <-
   ifelse((PQS_BRASIL$REG1 == "2"),"Nordeste",PQS_BRASIL$REG1)
 PQS_BRASIL$REG3 <-
@@ -128,10 +128,10 @@ graf.bolsa.regiao <-
         axis.text.x = element_text(size = 10, colour = "black"),
         axis.text.y = element_text(size = 10, colour = "black"),
         axis.title.y = element_text(size=11, face="bold", colour = "black"))+
-  labs(x = "", y = "Frequência")
+  labs(x = "", y = "FrequÃªncia")
 
 grafico3 <- grid.arrange(graf.bolsa.regiao,ncol=1,
-             top = textGrob("Gráfico 3 - Distribuição dos bolsistas PQ por região do Brasil",
+             top = textGrob("GrÃ¡fico 3 - DistribuiÃ§Ã£o dos bolsistas PQ por regiÃ£o do Brasil",
                             gp=gpar(fontsize=12,font=1)),
              bottom = textGrob("Dados Obtidos a partir da pesquisa (2020)",
                                gp=gpar(fontsize=10,font=1)))
